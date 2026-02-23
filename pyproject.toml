@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sweet-sixteen"
+version = "0.1.0"
+description = "A Python tool to convert safetensors model files into bf16 (brain float 16) precision"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "MIT"}
+authors = [
+    {name = "chazzofalf", email = "chazz@chazz.com"}
+]
+keywords = ["bf16", "safetensors", "pytorch", "model-conversion", "machine-learning"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+
+dependencies = [
+    "torch>=2.10.0",
+    "safetensors>=0.7.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/chazzofalf/sweet_sixteen_brain_float_model_converter"
+Repository = "https://github.com/chazzofalf/sweet_sixteen_brain_float_model_converter"
+Issues = "https://github.com/chazzofalf/sweet_sixteen_brain_float_model_converter/issues"
+
+[project.scripts]
+sweet-sixteen = "sweet_sixteen.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["sweet_sixteen*"]
+
+[tool.setuptools.package-data]
+sweet_sixteen = ["py.typed"]

@@ -13,40 +13,45 @@ This tool allows you to convert AI/ML models stored in the safetensors format to
 - **Good Numerical Stability**: bf16 maintains the same exponent range as fp32, providing better numerical stability than fp16
 - **Hardware Acceleration**: Modern GPUs (like NVIDIA's Ampere architecture) have dedicated bf16 processing units
 
+## Installation
+
+```bash
+pip install sweet-sixteen
+```
+
+### From Source
+
+```bash
+git clone https://github.com/chazzofalf/sweet_sixteen_brain_float_model_converter.git
+cd sweet_sixteen_brain_float_model_converter
+pip install .
+```
+
 ## Prerequisites
 
 - Python 3.8 or higher
 - PyTorch 2.10.0 or compatible version
 - A safetensors model file to convert
 
-## Installation
-
-```bash
-# Clone the repository
-git clone https://github.com/chazzofalf/sweet_sixteen_brain_float_model_converter.git
-cd sweet_sixteen_brain_float_model_converter
-
-# Create a virtual environment (recommended)
-python -m venv .venv
-source .venv/bin/activate  # On Windows: .venv\Scripts\activate
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
 ## Usage
 
-### Basic Usage
+### Command Line Interface
 
 ```bash
-python convert_to_bf16.py <input_model_path> <output_model_path>
+sweet-sixteen <input_model_path> <output_model_path>
 ```
 
-### Example
+### Python API
 
-```bash
-# Convert a model to bf16
-python convert_to_bf16.py /path/to/input_model.safetensors /path/to/output_model_bf16.safetensors
+```python
+from sweet_sixteen import convert_safetensors_to_bf16
+
+stats = convert_safetensors_to_bf16(
+    "path/to/input_model.safetensors",
+    "path/to/output_model_bf16.safetensors"
+)
+
+print(f"Converted {stats['converted']} tensors")
 ```
 
 ### Command Line Arguments
@@ -103,9 +108,9 @@ Success! Converted model saved to: /path/to/output_model_bf16.safetensors
 
 ## Requirements
 
-See `requirements.txt` for the full list of dependencies. Key dependencies include:
-- `torch==2.10.0`
-- `safetensors==0.7.0`
+- Python 3.8+
+- PyTorch >= 2.10.0
+- safetensors >= 0.7.0
 
 ## License
 
