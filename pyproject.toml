@@ -10,7 +10,7 @@ readme = "README.md"
 requires-python = ">=3.8"
 license = {text = "MIT"}
 authors = [
-    {name = "chazzofalf", email = "chazz@chazz.com"}
+    {name = "Charles Montgomery", email = "chazzofalf@gmail.com"}
 ]
 keywords = ["bf16", "safetensors", "pytorch", "model-conversion", "machine-learning"]
 classifiers = [

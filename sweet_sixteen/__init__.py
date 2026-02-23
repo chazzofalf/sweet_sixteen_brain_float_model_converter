@@ -5,8 +5,8 @@ A Python tool to convert safetensors model files into bf16 (brain float 16) prec
 """
 
 __version__ = "0.1.0"
-__author__ = "chazzofalf"
-__email__ = "chazz@chazz.com"
+__author__ = "Charles Montgomery"
+__email__ = "chazzofalf@gmail.com"
 
 from sweet_sixteen.converter import (
     convert_to_bf16,
