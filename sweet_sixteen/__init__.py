@@ -10,15 +10,21 @@ __email__ = "chazzofalf@gmail.com"
 
 from sweet_sixteen.converter import (
     convert_to_bf16,
+    convert_to_float16,
     convert_safetensors_to_bf16,
+    convert_safetensors_to_float16,
     detect_dtype,
     get_bf16_dtype_name,
+    get_float16_dtype_name,
 )
 
 __all__ = [
     "convert_to_bf16",
+    "convert_to_float16",
     "convert_safetensors_to_bf16",
+    "convert_safetensors_to_float16",
     "detect_dtype",
     "get_bf16_dtype_name",
+    "get_float16_dtype_name",
     "__version__",
 ]
